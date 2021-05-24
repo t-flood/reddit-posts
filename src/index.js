@@ -11,7 +11,7 @@ function Reddit() {
     fetch("https://www.reddit.com/r/reactjs.json")
       .then((res) => res.json())
       .then((json) => setPosts(json.data.children.map((c) => c.data)));
-  });
+  }, [setPosts]);
 
   return (
     <ul>
